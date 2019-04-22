@@ -2,8 +2,10 @@ package com.example.twitchclone.main
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.example.twitchclone.R
+import com.example.twitchclone.main.adapter.MainAdapter
 import com.example.twitchclone.model.source.ChannelRepository
 
 class MainActivity : AppCompatActivity(), MainContract.View {
@@ -20,10 +22,15 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     }
 
     private lateinit var mainPresenter : MainPresenter
+    private lateinit var liveAdapter : MainAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        liveAdapter = MainAdapter(this, MainAdapter.ChannelStyle.LIVE_CHANNEL)
+
+        liveView.layoutManager = LinearLayoutManager(this)
 
         mainPresenter = MainPresenter(this).apply {
             view = this@MainActivity
@@ -31,5 +38,6 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         }
 
         mainPresenter.dataLoad()
+        liveView.adapter = liveAdapter
     }
 }
