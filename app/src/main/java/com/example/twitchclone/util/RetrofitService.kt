@@ -1,5 +1,6 @@
 package com.example.twitchclone.util
 
+import com.example.twitchclone.model.ChannelSearch
 import com.example.twitchclone.model.Channelfollows
 import com.example.twitchclone.model.Features
 import com.example.twitchclone.model.LiveStream
@@ -35,4 +36,12 @@ interface RetrofitService {
     @GET("kraken/streams/featured?")
     fun recomendChannel(@Query("limit") limit : Int)
     : Call<Features>
+
+    @Headers(
+        "Accept: application/vnd.twitchtv.v5+json",
+        "Client-ID: clmkfe63efnp9ssj1eogpg57ak3m79"
+    )
+    @GET("kraken/search/streams?")
+    fun searchChannel(@Query("query") query : String)
+    : Call<ChannelSearch>
 }

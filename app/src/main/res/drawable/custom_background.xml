@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-<item android:drawable="@color/colorLine" android:id="@android:id/background"/>
+    <item>
+        <shape android:shape="rectangle">
+            <stroke
+                android:width="3dp"
+                android:color="@color/colorLine"/>
 
+            <solid android:color="@color/colorItem"/>
+        </shape>
+    </item>
 </layer-list>

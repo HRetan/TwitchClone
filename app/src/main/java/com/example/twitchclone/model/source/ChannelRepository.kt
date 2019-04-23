@@ -22,6 +22,14 @@ object ChannelRepository : ChannelSourceData {
 
     }
 
+    override fun SearchData(strChannel: String, callback: ChannelSourceData.searchCallBack) {
+        channelRemoteSourceData.SearchData(strChannel, object : ChannelSourceData.searchCallBack{
+            override fun dataLoad(searchData: ArrayList<Channels>) {
+                callback.dataLoad(searchData)
+            }
+        })
+    }
+
     override fun refreshData() {
 
     }

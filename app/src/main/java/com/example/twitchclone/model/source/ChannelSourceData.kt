@@ -8,6 +8,11 @@ interface ChannelSourceData {
         fun dataLoad(offlineData : ArrayList<Channels>, liveData : ArrayList<Channels>, featureData : ArrayList<FeatureData>)
     }
 
+    interface searchCallBack{
+        fun dataLoad(searchData : ArrayList<Channels>)
+    }
+
     fun loadData(callback : loadCallBack)
+    fun SearchData(strChannel : String, callback : searchCallBack)
     fun refreshData()
 }

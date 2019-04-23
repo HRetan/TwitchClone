@@ -11,6 +11,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".searchchannel.SearchChannel">
+        </activity>
         <activity android:name=".twitchweb.TwitchWeb">
         </activity>
         <activity android:name=".main.MainActivity">

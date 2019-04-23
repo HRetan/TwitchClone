@@ -17,5 +17,6 @@ interface MainContract {
         var adapterView : AdapterContract.View?
 
         fun dataLoad()
+        fun searchData(strChannel : String)
     }
 }

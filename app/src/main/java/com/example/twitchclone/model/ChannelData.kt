@@ -6,9 +6,11 @@ data class FeatureData(val stream : Channels)
 
 // 현재 follow한 채널
 data class Channelfollows(val follows: ArrayList<Channels>)
-data class Channels(
-    val channel: ChannelDetail
-)
+
+// 현재 스트림 중인 채널
+data class ChannelSearch(val streams : ArrayList<Channels>)
+
+data class Channels(val channel: ChannelDetail)
 
 data class ChannelDetail(
     val _id: String,

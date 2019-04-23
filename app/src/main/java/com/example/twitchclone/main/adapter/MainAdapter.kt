@@ -24,9 +24,9 @@ class MainAdapter(var context: Context) : RecyclerView.Adapter<RecyclerView.View
                 var holder = p0 as MainViewHolder
                 if(p1 == 0)
                     holder.onBind("생방송 채널")
-                else if(p1 == liveItem.size + 1)
+                else if(p1 == liveItem.size + 1 && featureItem.size != 0)
                     holder.onBind("추천 채널")
-                else
+                else if(offlineItem.size != 0)
                     holder.onBind("오프라인 채널")
 
             }

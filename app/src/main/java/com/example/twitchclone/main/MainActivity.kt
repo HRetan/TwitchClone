@@ -35,8 +35,17 @@ class MainActivity : AppCompatActivity(), MainContract.View {
             adapterView = mainAdapter
         }
 
+        imageButton.setOnClickListener {
+            mainPresenter.searchData(search_Channel.text.toString())
+        }
+
         mainPresenter.dataLoad()
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mainPresenter.dataLoad()
     }
 
     override fun showLoading() {
