@@ -1,4 +1,4 @@
-package com.example.twitchclone.searchchannel.adapter
+package com.example.twitchclone.ui.searchchannel.adapter
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.twitchclone.R
 import com.example.twitchclone.model.Channels
-import com.example.twitchclone.searchchannel.adapter.contract.SearchAdapterContract
+import com.example.twitchclone.ui.searchchannel.adapter.contract.SearchAdapterContract
 
 class SearchAdapter(var context: Context) : RecyclerView.Adapter<SearchViewHolder>(), SearchAdapterContract.Model,
     SearchAdapterContract.View {

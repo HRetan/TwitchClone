@@ -1,4 +1,4 @@
-package com.example.twitchclone.main.adapter
+package com.example.twitchclone.ui.main.adapter
 
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.example.twitchclone.R
 import com.example.twitchclone.model.Channels
 import com.example.twitchclone.model.FeatureData
-import com.example.twitchclone.twitchweb.TwitchWeb
+import com.example.twitchclone.ui.twitchweb.TwitchWeb
 
 
 class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

@@ -1,4 +1,4 @@
-package com.example.twitchclone.searchchannel.adapter.contract
+package com.example.twitchclone.ui.searchchannel.adapter.contract
 
 import com.example.twitchclone.model.Channels
 

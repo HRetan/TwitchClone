@@ -1,4 +1,4 @@
-package com.example.twitchclone.searchchannel
+package com.example.twitchclone.ui.searchchannel
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import com.example.twitchclone.R
 import com.example.twitchclone.model.source.ChannelRepository
-import com.example.twitchclone.searchchannel.adapter.SearchAdapter
+import com.example.twitchclone.ui.searchchannel.adapter.SearchAdapter
 import kotlinx.android.synthetic.main.activity_search_channel.*
 
 class SearchChannel : AppCompatActivity(), SearchContract.View {

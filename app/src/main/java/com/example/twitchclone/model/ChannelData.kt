@@ -25,5 +25,5 @@ data class ChannelDetail(
 
 // Live 여부 확인
 data class LiveStream(
-    val stream: String
+    val stream: ChannelDetail
 )

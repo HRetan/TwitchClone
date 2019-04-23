@@ -1,4 +1,4 @@
-package com.example.twitchclone.twitchweb
+package com.example.twitchclone.ui.twitchweb
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity

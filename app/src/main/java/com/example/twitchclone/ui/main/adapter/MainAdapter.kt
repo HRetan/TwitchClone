@@ -1,4 +1,4 @@
-package com.example.twitchclone.main.adapter
+package com.example.twitchclone.ui.main.adapter
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.twitchclone.R
-import com.example.twitchclone.main.adapter.contract.AdapterContract
 import com.example.twitchclone.model.Channels
 import com.example.twitchclone.model.FeatureData
+import com.example.twitchclone.ui.main.adapter.contract.AdapterContract
 
 class MainAdapter(var context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>(),
     AdapterContract.Model, AdapterContract.View {
@@ -23,11 +23,11 @@ class MainAdapter(var context: Context) : RecyclerView.Adapter<RecyclerView.View
             0, liveItem.size + 1, liveItem.size + featureItem.size + 2 -> {
                 var holder = p0 as MainViewHolder
                 if(p1 == 0)
-                    holder.onBind("생방송 채널")
+                    holder.onBind(context.resources.getString(R.string.live_channel))
                 else if(p1 == liveItem.size + 1 && featureItem.size != 0)
-                    holder.onBind("추천 채널")
+                    holder.onBind(context.resources.getString(R.string.feature_channel))
                 else if(offlineItem.size != 0)
-                    holder.onBind("오프라인 채널")
+                    holder.onBind(context.resources.getString(R.string.offline_channel))
 
             }
             in 1..liveItem.size -> {

@@ -1,4 +1,4 @@
-package com.example.twitchclone.main.adapter.contract
+package com.example.twitchclone.ui.main.adapter.contract
 
 import com.example.twitchclone.model.Channels
 import com.example.twitchclone.model.FeatureData

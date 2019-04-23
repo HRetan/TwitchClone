@@ -7,19 +7,25 @@ import com.example.twitchclone.model.source.remote.ChannelRemoteSourceData
 object ChannelRepository : ChannelSourceData {
 
     private val channelRemoteSourceData = ChannelRemoteSourceData
+    private var isRefresh : Boolean = false
 
     override fun loadData(callback: ChannelSourceData.loadCallBack) {
 
-        channelRemoteSourceData.loadData(object : ChannelSourceData.loadCallBack{
-            override fun dataLoad(
-                offlineData: ArrayList<Channels>,
-                liveData: ArrayList<Channels>,
-                featureData: ArrayList<FeatureData>
-            ) {
+        if(isRefresh)
+        {
+            refreshDataLoad(callback)
+        }
+        else {
+            channelRemoteSourceData.loadData(object : ChannelSourceData.loadCallBack {
+                override fun dataLoad(
+                    offlineData: ArrayList<Channels>,
+                    liveData: ArrayList<Channels>,
+                    featureData: ArrayList<FeatureData>
+                ) {
                     callback.dataLoad(offlineData, liveData, featureData)
-            }
-        })
-
+                }
+            })
+        }
     }
 
     override fun SearchData(strChannel: String, callback: ChannelSourceData.searchCallBack) {
@@ -30,7 +36,22 @@ object ChannelRepository : ChannelSourceData {
         })
     }
 
-    override fun refreshData() {
+    private fun refreshDataLoad(callback: ChannelSourceData.loadCallBack){
+        channelRemoteSourceData.clearData()
+        channelRemoteSourceData.loadData(object : ChannelSourceData.loadCallBack {
+            override fun dataLoad(
+                offlineData: ArrayList<Channels>,
+                liveData: ArrayList<Channels>,
+                featureData: ArrayList<FeatureData>
+            ) {
+                callback.dataLoad(offlineData, liveData, featureData)
+                isRefresh = false
+            }
+        })
+    }
 
+
+    override fun refreshData() {
+        isRefresh = true
     }
 }

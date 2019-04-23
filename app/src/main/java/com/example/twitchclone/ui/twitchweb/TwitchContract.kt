@@ -1,4 +1,4 @@
-package com.example.twitchclone.twitchweb
+package com.example.twitchclone.ui.twitchweb
 
 interface TwitchContract {
     interface View{

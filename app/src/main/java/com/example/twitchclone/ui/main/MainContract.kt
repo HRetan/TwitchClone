@@ -1,7 +1,7 @@
-package com.example.twitchclone.main
+package com.example.twitchclone.ui.main
 
-import com.example.twitchclone.main.adapter.contract.AdapterContract
 import com.example.twitchclone.model.source.ChannelRepository
+import com.example.twitchclone.ui.main.adapter.contract.AdapterContract
 
 interface MainContract {
     interface View{
@@ -17,6 +17,7 @@ interface MainContract {
         var adapterView : AdapterContract.View?
 
         fun dataLoad()
+        fun refreshData()
         fun searchData(strChannel : String)
     }
 }

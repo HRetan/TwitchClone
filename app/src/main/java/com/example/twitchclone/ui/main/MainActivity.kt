@@ -1,19 +1,23 @@
-package com.example.twitchclone.main
+package com.example.twitchclone.ui.main
 
 import android.os.Bundle
+import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import com.example.twitchclone.R
-import com.example.twitchclone.main.adapter.MainAdapter
 import com.example.twitchclone.model.source.ChannelRepository
+import com.example.twitchclone.ui.main.adapter.MainAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainContract.View {
 
     private val liveView by lazy {
         findViewById(R.id.recyclerView_Live) as RecyclerView
+    }
+    private val refreshSwipe by lazy{
+        findViewById(R.id.swipe_refresh) as SwipeRefreshLayout
     }
 
     private lateinit var mainPresenter : MainPresenter
@@ -39,6 +43,11 @@ class MainActivity : AppCompatActivity(), MainContract.View {
             mainPresenter.searchData(search_Channel.text.toString())
         }
 
+        refreshSwipe.setOnRefreshListener {
+            mainPresenter.refreshData()
+
+        }
+
         mainPresenter.dataLoad()
 
     }
@@ -54,5 +63,6 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     override fun hideLoading() {
         progressBar.visibility = View.GONE
         liveView.adapter = mainAdapter
+        refreshSwipe.isRefreshing = false
     }
 }

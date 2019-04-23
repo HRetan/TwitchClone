@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".searchchannel.SearchChannel"
+        tools:context=".ui.searchchannel.SearchChannel"
         android:orientation="vertical"
         android:background="@color/colorLine">
 
@@ -42,7 +42,8 @@
             android:gravity="center_vertical"
             android:textStyle="bold"
             android:textColor="#ffffff"
-            android:background="@color/colorLine" android:text="   생방송 채널"/>
+            android:background="@color/colorLine" android:text="생방송 채널" android:paddingLeft="20dp"
+    />
     <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">

@@ -1,4 +1,4 @@
-package com.example.twitchclone.searchchannel.adapter
+package com.example.twitchclone.ui.searchchannel.adapter
 
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
@@ -7,7 +7,7 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.example.twitchclone.R
 import com.example.twitchclone.model.Channels
-import com.example.twitchclone.twitchweb.TwitchWeb
+import com.example.twitchclone.ui.twitchweb.TwitchWeb
 
 class SearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val text_name by lazy {
