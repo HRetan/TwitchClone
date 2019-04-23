@@ -47,6 +47,13 @@ class SearchChannel : AppCompatActivity(), SearchContract.View {
         searchPresenter.connectData()
     }
 
+
+    override fun onPause() {
+        super.onPause()
+        overridePendingTransition(0, 0)
+    }
+
+
     override fun showLoading() {
         progressBar2.visibility = View.VISIBLE
     }

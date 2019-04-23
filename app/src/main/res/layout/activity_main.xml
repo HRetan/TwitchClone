@@ -29,8 +29,8 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:id="@+id/imageButton" android:layout_weight="0" android:layout_gravity="center"
-                android:contentDescription="TODO" app:srcCompat="@android:drawable/ic_menu_search"
-                android:background="#00ffffff"/>
+                android:contentDescription="TODO" app:srcCompat="@drawable/search"
+                android:background="#00ffffff" android:scaleX="2" android:scaleY="2"/>
     </LinearLayout>
     <FrameLayout
             android:layout_width="match_parent"

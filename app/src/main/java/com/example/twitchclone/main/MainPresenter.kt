@@ -18,8 +18,6 @@ class MainPresenter(var context: Context) : MainContract.Presenter {
     override var adapterView: AdapterContract.View? = null
 
     override fun dataLoad() {
-        clearAdapter()
-
         view.showLoading()
         channelData.loadData(object : ChannelSourceData.loadCallBack {
             override fun dataLoad(

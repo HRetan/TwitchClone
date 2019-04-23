@@ -101,7 +101,8 @@ object ChannelRemoteSourceData : ChannelSourceData {
     }
 
     override fun SearchData(strChannel: String, callback: ChannelSourceData.searchCallBack) {
-        clearData()
+        searchData.clear()
+
         addSearchData(strChannel)
 
         Handler().postDelayed({callback.dataLoad(searchData)}, 3000)
@@ -115,6 +116,5 @@ object ChannelRemoteSourceData : ChannelSourceData {
         offlineData.clear()
         liveData.clear()
         featureData.clear()
-        searchData.clear()
     }
 }

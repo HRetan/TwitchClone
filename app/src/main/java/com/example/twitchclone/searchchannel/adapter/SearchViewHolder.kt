@@ -41,6 +41,7 @@ class SearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var intent = Intent(itemView.context, TwitchWeb::class.java)
 
         intent.putExtra("url", data.channel.url)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
         itemView.context.startActivity(intent)
     }
 }

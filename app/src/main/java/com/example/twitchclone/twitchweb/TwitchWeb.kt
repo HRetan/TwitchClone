@@ -27,6 +27,13 @@ class TwitchWeb : AppCompatActivity(), TwitchContract.View{
         twitchPresenter.contectWebView()
     }
 
+
+    override fun onPause() {
+        super.onPause()
+        overridePendingTransition(0, 0)
+    }
+
+
     override fun showWebView() {
         twitch_web.webViewClient = object : WebViewClient(){
             override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {

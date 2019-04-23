@@ -45,7 +45,6 @@ class MainActivity : AppCompatActivity(), MainContract.View {
 
     override fun onResume() {
         super.onResume()
-        mainPresenter.dataLoad()
     }
 
     override fun showLoading() {
