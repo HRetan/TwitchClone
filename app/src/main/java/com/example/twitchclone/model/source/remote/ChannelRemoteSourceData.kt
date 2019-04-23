@@ -54,7 +54,7 @@ object ChannelRemoteSourceData : ChannelSourceData {
     }
 
     private fun addFeatureData(){
-        RetrofitClient.getService().recomendChannel(10).enqueue(object : Callback<Features>{
+        RetrofitClient.getService().recomendChannel(5).enqueue(object : Callback<Features>{
             override fun onFailure(call: Call<Features>, t: Throwable) {
 
             }
@@ -73,7 +73,7 @@ object ChannelRemoteSourceData : ChannelSourceData {
         addFollowData()
         addFeatureData()
 
-        Handler().postDelayed({callback.dataLoad(offlineData, liveData, featureData)}, 5000)
+        Handler().postDelayed({callback.dataLoad(offlineData, liveData, featureData)}, 3000)
     }
 
     override fun refreshData() {

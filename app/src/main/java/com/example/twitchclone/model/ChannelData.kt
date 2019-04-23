@@ -17,7 +17,8 @@ data class ChannelDetail(
     val name: String,
     val status: String,
     val logo: String,
-    val profile_banner: String
+    val video_banner: String,
+    val url : String
 )
 
 // Live 여부 확인

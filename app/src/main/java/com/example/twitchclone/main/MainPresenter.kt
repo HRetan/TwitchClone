@@ -1,6 +1,7 @@
 package com.example.twitchclone.main
 
 import android.content.Context
+import com.example.twitchclone.main.adapter.contract.AdapterContract
 import com.example.twitchclone.model.Channels
 import com.example.twitchclone.model.FeatureData
 import com.example.twitchclone.model.source.ChannelRepository
@@ -10,14 +11,21 @@ class MainPresenter(var context : Context) : MainContract.Presenter {
     override lateinit var channelData: ChannelRepository
     override lateinit var view: MainContract.View
 
+    override lateinit var adapterModel: AdapterContract.Model
+
+    override var adapterView: AdapterContract.View? = null
+
     override fun dataLoad() {
+        view.showLoading()
         channelData.loadData(object : ChannelSourceData.loadCallBack{
             override fun dataLoad(
                 offlineData: ArrayList<Channels>,
                 liveData: ArrayList<Channels>,
                 featureData: ArrayList<FeatureData>
             ) {
-
+                adapterModel.addModel(liveData, offlineData, featureData)
+                view.hideLoading()
+                adapterView?.notifydata()
             }
         })
     }

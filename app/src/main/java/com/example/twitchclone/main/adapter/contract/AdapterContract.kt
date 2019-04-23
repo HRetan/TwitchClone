@@ -1,6 +1,7 @@
 package com.example.twitchclone.main.adapter.contract
 
 import com.example.twitchclone.model.Channels
+import com.example.twitchclone.model.FeatureData
 
 interface AdapterContract {
     interface View{
@@ -8,7 +9,9 @@ interface AdapterContract {
     }
 
     interface Model{
-        fun addModel(dataList : ArrayList<Channels>)
-        fun getData(position : Int) : Channels
+        fun addModel(liveData : ArrayList<Channels>, offLineData : ArrayList<Channels>, featureData : ArrayList<FeatureData>)
+        fun getLiveData(position : Int) : Channels
+        fun getOfflineData(position : Int) : Channels
+        fun getFeatureData(position : Int) : FeatureData
     }
 }
